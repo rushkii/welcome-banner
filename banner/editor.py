@@ -29,7 +29,7 @@ class WelcomeBanner:
         self.__image = Image.open(impath)
 
     def set_frame(self, path=None):
-        if self.frame is None or not self.frame or self.frame != "":
+        if self.frame is None or not self.frame or self.frame == "":
             path = f"{self._imgs}/395aebb5f536f65d7817d38f0d1c1925-edited.png" # default
         elif path is not None:
             path = path
@@ -41,8 +41,9 @@ class WelcomeBanner:
 
     def add_sticker(self):
         import random
-        pack = random.choice(os.listdir(self._stickers)[:-1])
-        sticker = random.choice(os.listdir(self._stickers+"/"+pack))
+        spath = os.listdir(self._stickers)[:-1]
+        pack = random.choice(spath)
+        sticker = random.choice(os.listdir(self._stickers+"/"+pack+"/"))
         simg = Image.open(f"{self._stickers}/{pack}/{sticker}").resize((210,210)).convert('RGBA') # resize((w,h))
         self.__image.paste(simg, (0, 580), simg) # x,y
 
