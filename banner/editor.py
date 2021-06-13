@@ -31,10 +31,10 @@ class WelcomeBanner:
     def set_frame(self, path=None):
         if self.frame is None or not self.frame or self.frame != "":
             path = f"{self._imgs}/395aebb5f536f65d7817d38f0d1c1925-edited.png" # default
-        elif path is None:
-            path = f"{self._imgs}/{self.frame}"
+        elif path is not None:
+            path = path
         else:
-            path = f"{self._imgs}/395aebb5f536f65d7817d38f0d1c1925-edited.png" # default
+            path = self.frame
         im = Image.open(path)
         im = im.resize((343,313))
         self.__image.paste(im, (51,34))
