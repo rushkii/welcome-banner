@@ -6,7 +6,7 @@
 # You can re-edit, re-code, and use as much as you want
 # Just don't replace my copyright
 
-# open-source <http://github.com/rushkii/welcome-banner/
+# open-source <http://github.com/rushkii/welcome-banner/>
 
 from PIL import Image, ImageFont, ImageDraw, ImageEnhance
 from typing import Optional
